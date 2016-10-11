@@ -1,0 +1,229 @@
+html {
+    overflow-y: scroll;
+    min-height: 100%;
+    position:relative;
+}
+
+body { 
+    margin: 0 auto;
+    padding: 0;
+    font-size: 10px;
+    font-family: $find-font-family;
+    width: 1024px;
+    background-color: $emp-finder-color;
+}
+
+header{
+	.logo{
+		width: 100px;
+		height: 100px;
+		border-radius: 100px;
+		background-color: #B5B1AB;
+		display: table;
+		color: $white-color;
+		margin: 25px 0;
+
+		label{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 25px;
+		}
+	}
+}
+
+.filter-wrapper{
+		margin-bottom: 15px;
+	}
+
+	.title{
+		float: left;
+		width: 75%;
+		font-size: 25px;
+	}
+
+	.filters{
+		float: right;
+		width: 25%;
+		position: relative;
+
+		button{
+			width: 20px;
+		  	height: 25px;
+		  	padding: 0;
+		  	margin-left: -25px;
+		}
+
+		img{
+			width: 15px;
+			height: 15px;
+		}
+		button.filter-icon{
+			margin-left: 0;
+		}
+		input[type='text']{
+			width: 80%;
+			border: 1px solid #B5B1AB;
+			box-sizing: border-box;
+			padding: 5px;
+		}
+
+		.filter-panel-wrapper{
+			  position: absolute;
+			  background-color: white;
+			  border: 1px solid #000;
+			  border-radius: 5px;
+			  width: 260px;
+			  z-index: 10;
+			  padding: 10px 10px 0 10px;
+			  box-shadow: 2px 2px 2px;
+
+			  label{
+			  	font-size: 15px;
+			  }
+
+			  .filter-category{
+			  	padding-bottom: 10px;
+			  	border-bottom: 1px solid #000;
+			  }
+
+			  .filter-panel{
+			  	padding-bottom: 10px;
+			  }
+		}
+	}
+
+.filters-panel li{
+	width: 50%;
+	float: left;
+}
+.page-content{
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.office-layout{
+	background-color: $white-color;
+	border: 1px solid #000;
+
+	.cricle{
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+		background-color: $emp-finder-color;
+		position: absolute;
+	}
+
+	.cricle-1{
+		left: 25px;
+	}
+
+	.cricle-2{
+		right: 25px;
+	}
+
+	.cricle-3{
+		left: 25px;
+		bottom: 0;
+	}
+
+	.cricle-4{
+		right: 25px;
+		bottom: 0;
+	}
+
+	.cricle.occupied-seat{
+		background-color: #422719;
+	}
+
+	.cricle.occupied-seat.searched-emp{
+		background-color: #00B0EE;
+	}
+
+	.cricle.moving, .cricle.over{
+		background-color: red;
+	}
+	
+	.table{
+		top: 25px;
+		position: absolute;
+		background-color: $emp-finder-color;
+		width: 100%;
+		height: 70%;
+		border: 1px solid $white-color;
+		display: table;
+
+		label{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 15px;
+		}
+	}
+
+	li{
+		width: 28%;
+	  	margin: 40px 25px;
+	  	height: 175px;	
+	  	float: left;
+	  	position: relative;
+	}
+}
+  
+.tooltip-wrapper{
+	position:absolute;
+    z-index: 2;
+    border: 1px solid #000;
+	background-color: $white-color;
+	width: 150px;
+	height: 128px;
+	border-radius: 5px;
+	display: none;
+	padding: 10px;
+  	box-sizing: border-box;
+  	font-size: 12px;
+  	line-height: 15px;
+
+  	img{
+  		width: 40px;
+  		height: 40px;
+  		background-color: $emp-finder-color;
+  		border-radius: 40px;
+  		vertical-align: top;
+  		margin-right: 10px;
+  		float: left;
+  	}
+
+  	label{
+  		color: #808080;
+  	}
+
+  	span{
+  		font-size: 13px
+  	}
+
+  	span.emp-name{
+  		font-size: 15px;
+  	}
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 15px solid #808080;
+  border-bottom: 15px solid transparent;
+  left: -15px;
+  position: absolute;
+  top: 10px;
+}
+
+.notify-employee{
+  background-color: #808080;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: $white-color;
+  font-size: 20px;
+  text-align: center;	
+}

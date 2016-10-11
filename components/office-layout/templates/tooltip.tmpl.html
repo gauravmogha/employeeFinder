@@ -1,0 +1,15 @@
+<div class="tooltip-section">
+	<div class="tooltip-wrapper" ng-if="jsonData.eName">
+		<div class="clearfix">
+			<img alt="employee" src="images/emp.png" >
+			<span ng-bind="jsonData.eName" class="emp-name"></span>
+			<span ng-bind="jsonData.eDes"></span>
+		</div>
+		<label>Team</label>
+		<div ng-bind="jsonData.eTeam"></div>
+		<label>Current Project:</label>
+		<div ng-bind="jsonData.cProject"></div>
+		<div class="arrow-left"></div>
+	</div>
+	<div ng-transclude></div>
+</div>

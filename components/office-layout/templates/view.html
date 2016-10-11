@@ -1,0 +1,64 @@
+<div class="filter-wrapper clearfix">
+	<div class="title">Office</div>
+	<div class="filters">
+		<input type="text" placeholder="Search" ng-model="sEmployee" name="search" ng-keyup="searchEmployee($event, sEmployee)"/>
+		<button ng-click="searchEmployee('search', sEmployee)">
+			<img alt="search" src="images/search.jpg">
+		</button>
+		<button class="filter-icon" ng-click="openFilterPanel = !openFilterPanel">
+			<img alt="search" src="images/filter.jpg">
+		</button>
+		<div class="filter-panel-wrapper" ng-if="openFilterPanel">
+			<div class="filter-category">
+				<label>
+					<input type="checkbox" ng-model="filters.teamFilter">
+					Team
+				</label>
+				<label>
+					<input type="checkbox" ng-model="filters.descFilter">
+					Job Title
+				</label>
+			</div>
+			<div class="filters-panel">
+				<div class="team-filter-list" ng-if="filters.teamFilter">
+					<ul>
+						<li ng-repeat="tm in filters.team track by $index">
+							<label>
+								<input type="checkbox" ng-model="tm.check" 
+								ng-change="selectedFilters(tm.check, tm.team)">
+								{{::tm.team}}
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="desc-filter-list" ng-if="filters.descFilter">
+					<ul>
+						<li ng-repeat="title in filters.jobTitle track by $index">
+							<label>
+								<input type="checkbox" ng-model="title.check" 
+								ng-change="selectedFilters(title.check, title.desc)">
+								{{::title.desc}}
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+<div tooltip tooltip-data='vc.tables'>
+<div class="office-layout clearfix" >
+	<ul>
+		<li ng-repeat = "table in vc.tables track by $index" ng-init="index = $index">
+			<div drag-drop ng-repeat = "emp in table.employees track by $index" data-row="{{index}}"  ng-init="empIndex = $index" class="cricle cricle-{{empIndex+1}}" data-employee-row="{{empIndex}}" ng-class="{'occupied-seat': emp.eId !== null, 'searched-emp': searchedEmp.indexOf(emp.eId) !== -1}">
+			</div>
+		    <div class="table">
+		    	<label> Table {{index + 1}} </label>
+		    </div>
+		</li>
+	</ul>
+</div>
+<div class="notify-employee" ng-if="dragEnd" 
+	ng-bind="[employeeShifted, 'has been moved from Table ', tableX, 'to Table ', tableY, '. A mail regarding this has been sent to', employeeShifted, '!'].join(' ')">
+</div>
+</div>

@@ -1,0 +1,52 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+
+table,tr,thead,th,td,tbody,tfoot,img{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+ul, li, ol {
+    margin: 0;
+    padding: 0;
+    outline:0;
+    list-style: none;
+}
+
+input{
+    outline: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+
+    &:before{
+        content: " "; 
+        display: table; 
+    }
+
+    &:after{
+        clear: both;
+        content: " "; 
+        display: table;
+    }
+}
+input[type='submit'], input[type='button'], button{
+    -webkit-appearance: none;
+    -webkit-border-radius:0; 
+    border-radius:0;
+} 
